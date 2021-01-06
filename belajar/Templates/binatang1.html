@@ -1,0 +1,26 @@
+{% extends 'test.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class='create'>
+  <button type="button" class="btn btn-primary" onclick="window.location='{% url 'foldercreate' %}';">Create</button>
+</div>
+
+
+<div class='first'>
+  {% for item in folder %}
+    <div class="card" style="width: 17rem; margin: 10px;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{item.nama_binatang}} </h5>
+          <p class="card-text">aku adalah binatang {{item.kategori}}</p>
+          <a href="{% url 'binatang2' pk=item.id %}" class="btn btn-primary">Open</a>
+          <a href="{% url 'folderupdate' pk=item.id %}" class="btn btn-warning">Update</a>
+          <a href="{% url 'folderdelete' pk=item.id %}" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

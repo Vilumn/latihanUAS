@@ -1,0 +1,24 @@
+{% extends 'test.html' %}
+{% load static %}
+
+{% block content %}
+
+        <!--Ini yang dipake-->
+        <section class="page-title">
+          <h5 class="font-weight-bold">folder</h5>
+        </section>
+
+        
+        <section class="form-area">
+            <div class="box-inside">
+                <form method="POST" class="mt-4" enctype="multipart/form-data">
+                  {% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div> 
+        </section>
+       <!--Sampe sini--> 
+    </section>
+
+    {% endblock %}

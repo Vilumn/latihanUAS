@@ -1,0 +1,22 @@
+{% extends 'test.html' %}
+{% load static %}
+{% block content %}
+        
+        <!--Ini yang dipake-->
+        <section class="page-title">
+          <h5 class="font-weight-bold">folder</h5>
+        </section>
+
+        
+        <section class="form-area">
+            <div class="box-inside">
+                <form method="post">{% csrf_token %}
+                    <p>Are you sure you want to delete <span style="color:red">"{{ object }}"</span>?</p>
+                    <input type="submit" value="Confirm">
+                </form>
+            </div> 
+        </section>
+       <!--Sampe sini--> 
+    </section>
+
+    {% endblock %}
